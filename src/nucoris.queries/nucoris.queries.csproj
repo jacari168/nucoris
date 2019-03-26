@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\nucoris.application.interfaces\nucoris.application.interfaces.csproj" />
+    <ProjectReference Include="..\nucoris.domain\nucoris.domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_SeedWork\" />
+  </ItemGroup>
+
+</Project>

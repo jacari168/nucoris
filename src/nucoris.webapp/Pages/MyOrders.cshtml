@@ -1,0 +1,29 @@
+﻿@page
+@model nucoris.webapp.Pages.MyOrdersModel
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<h1 class="container nucoris-color">Orders Assigned to Me</h1>
+
+<section class="container mt-4">
+    <p class="alert alert-warning"><em>Note</em>: this page is only used to show that 
+    the list of orders gets updated when you assign an order to your user.<br />
+    It has no functionality by itself.</p>
+    @foreach (var patient in Model.OrdersAssignedToMe)
+    {
+        <div class="card border-primary rounded-lg mb-3">
+            <div class="card-body pb-3 pt-3">
+                <h5 class="card-title">@patient.DisplayName</h5>
+                <h6 class="card-subtitle">@patient.Mrn</h6>
+
+                <div class="border-left border-primary mt-3 pl-3">
+                    @foreach (var order in patient.ActiveAdmission.Orders)
+                    {
+                        <div class="text-truncate font-weight-bold">@order.Description</div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</section>

@@ -1,0 +1,10 @@
+﻿@model System.Collections.Generic.List<string>
+
+<ul class="list-group list-group-flush">
+    @foreach (var allergy in Model)
+    {
+        <li class="ml-0 list-unstyled">@allergy <a class="nucoris-allergy btn fas fa-times-circle text-danger ml-1 p-0 pb-1" 
+                                                   data-toggle="tooltip" title="Remove"
+                                                   data-allergyname="@allergy"></a></li>        
+    }
+</ul>

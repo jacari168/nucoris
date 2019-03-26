@@ -1,0 +1,92 @@
+﻿@page
+@model nucoris.webapp.Pages.NewAdmissionModel
+@{
+    ViewData["Title"] = "New Admission";
+}
+
+<h1 class="container nucoris-color">New Admission</h1>
+
+<section id="searchSection" class="container mt-4">
+    <p class="alert alert-info">Please enter patient's medical record number (MRN):</p>
+    <form asp-page="NewAdmission" asp-page-handler="Search" method="post">
+        <div class="control-group form-group">
+            <div class="controls">
+                <label for="mrn">MRN:</label>
+                <input name="mrn" type="text" class="form-control">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</section>
+
+
+@* Note that the model defines a list of patients to be able to reuse the partial view "PatientList"
+    but we know it will include at most one patient *@
+
+@if (Model.FoundPatients != null && Model.FoundPatients.Any())
+{
+<section id="patientFoundSection" class="container">
+    <div class="container nucoris-background mt-5 mb-1 d-sm-block" style="height: 2px">&nbsp;</div>
+
+    @if (Model.FoundPatients[0].ActiveAdmission != null)
+    {
+        <p class="alert alert-warning">Patient is already admitted.</p>
+    }
+
+    <partial name="PatientList" model="@Model.FoundPatients" />
+
+    @if (Model.FoundPatients[0].ActiveAdmission == null)
+    {
+        <form asp-page="NewAdmission" asp-page-handler="Admit" method="post">
+            <div class="text-right mt-3">
+                <input name="patientId" type="hidden" value="@Model.FoundPatients[0].Id" />
+                <input type="submit" class="btn btn-success" value="Admit" />
+            </div>
+        </form>
+    }
+</section>
+}
+else if (Model.NewPatient != null && !String.IsNullOrWhiteSpace(Model.NewPatient.Mrn))
+{
+<section id="patientNotFoundSection" class="container">
+    <div class="container nucoris-background mt-5 mb-1 d-sm-block" style="height: 2px">&nbsp;</div>
+
+    <p class="alert alert-warning">Please complete patient's given name, family name and date of birth if known</p>
+    <form asp-page="NewAdmission" asp-page-handler="NewPatient" method="post">
+        <div class="form-group row">
+            <label asp-for="NewPatient.Mrn" class="col-sm-3 col-lg-2 col-form-label">MRN:</label>
+            <div class="col-sm-9 col-lg-10">
+                <input asp-for="NewPatient.Mrn" class="form-control">
+                <span asp-validation-for="NewPatient.Mrn" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="NewPatient.GivenName" class="col-sm-3 col-lg-2 col-form-label">Given name:</label>
+            <div class="col-sm-9 col-lg-10">
+                <input asp-for="NewPatient.GivenName" class="form-control">
+                <span asp-validation-for="NewPatient.GivenName" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="NewPatient.FamilyName" class="col-sm-3 col-lg-2 col-form-label">Family name:</label>
+            <div class="col-sm-9 col-lg-10">
+                <input asp-for="NewPatient.FamilyName" class="form-control">
+                <span asp-validation-for="NewPatient.FamilyName" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="NewPatient.DateOfBirth" class="col-sm-3 col-lg-2 col-form-label">Date of Birth:</label>
+            <div class="col-sm-4">
+                <input asp-for="NewPatient.DateOfBirth" class="form-control">
+                <span asp-validation-for="NewPatient.DateOfBirth" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn btn-success">Save and Admit</button>
+        </div>
+    </form>
+</section>
+
+}
+
+

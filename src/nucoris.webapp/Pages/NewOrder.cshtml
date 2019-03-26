@@ -1,0 +1,41 @@
+﻿@page
+@model nucoris.webapp.Pages.NewOrderModel
+@{
+    ViewData["Title"] = "Add New Order";
+}
+
+<h1 class="container nucoris-color">Add New Order</h1>
+<h4 class="container my-3">@Model.Patient.DisplayName</h4>
+
+<section class="container">
+    <p class="alert alert-info my-2">Please enter the new order:</p>
+    <form method="post">
+        <input class="text-hide" asp-for="@Model.NewOrder.PatientId" />
+        <input class="text-hide" asp-for="@Model.NewOrder.AdmissionId" />
+
+        <div class="form-group row">
+            <label asp-for="@Model.NewOrder.MedicationId" class="col-sm-5 col-lg-3 col-form-label">Medication:</label>
+            <div class="col-sm-7 col-lg-9">
+                <select asp-for="@Model.NewOrder.MedicationId" asp-items="@Model.MedicationForms" class="form-control"></select>
+                <span asp-validation-for="@Model.NewOrder.MedicationId" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="@Model.NewOrder.MedicationId" class="col-sm-5 col-lg-3 col-form-label">Administration Frequency:</label>
+            <div class="col-sm-7 col-lg-9">
+                <select asp-for="@Model.NewOrder.FrequencyId" asp-items="@Model.AdministrationFrequencies" class="form-control"></select>
+                <span asp-validation-for="@Model.NewOrder.FrequencyId" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="@Model.NewOrder.StartTime" class="col-sm-5 col-lg-3 col-form-label">Start Time:</label>
+            <div class="col-sm-5">
+                <input asp-for="@Model.NewOrder.StartTime" class="form-control" />
+                <span asp-validation-for="@Model.NewOrder.StartTime" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn btn-success">Save and Close</button>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,91 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <section title="Welcome" class="nucoris-border-left">
+        <div>
+            <h2 class="nucoris-color">Welcome!</h2>
+            <p>
+                <span class="text-primary font-weight-bold">nucoris</span> is the exploratory prototype
+                of a cloud-native <em>healthcare information system</em> (HIS)
+                that I have developed and used as a learning platform during a sabbatical leave.
+                It’s built with <a href="https://deviq.com/solid/">SOLID</a> principles and a domain-driven approach 
+                in the <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a> style. 
+                The application layer is organized 
+                around the <abbr title="Command Query Responsibility Segregation">CQRS</abbr> pattern, 
+                with events being used to support business rules and for interoperability.
+            </p>
+            <p>
+                What you are seeing now is a <a href="https://www.learnrazorpages.com/">Razor Page</a> slightly styled with
+                <a href="https://getbootstrap.com/">Bootstrap</a> and rendered by an
+                <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps">ASP.NET Core</a> web app hosted by
+                <a href="https://azure.microsoft.com/en-us/services/app-service/">Azure App Service</a>.
+                The applications exposes also a REST API that some pages use to post simple commands and do partial view updates.
+            </p>
+            <p>
+                In the backend, data is stored in
+                <a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure Cosmos DB</a>
+                document database. Events are published to an
+                <a href="https://azure.microsoft.com/en-us/services/service-bus/">Azure Service Bus</a>,
+                where they are consumed by <a href="https://azure.microsoft.com/en-us/services/functions/">Azure Functions</a>
+                and <a href="https://azure.microsoft.com/en-us/services/logic-apps/">Logic Apps</a>
+                for interoperability and customization.
+            </p>
+            <p>
+                For business analysis, <a href="https://azure.microsoft.com/en-us/services/data-factory/">Azure Data Factory</a>
+                periodically transfers data from <span class="text-primary font-weight-bold">nucoris</span> Cosmos DB into a data warehouse
+                supported by an <a href="https://azure.microsoft.com/en-us/services/sql-database/">Azure SQL Database</a>.
+            </p>
+        </div>
+    </section>
+
+    <section title="Architecture" class="nucoris-border-left">
+        <div>
+            <h2 class="nucoris-color">Architecture</h2>
+            <p>
+                I've spent some time analyzing the qualities we expect from an <abbr title="Healthcare Information System">HIS</abbr>
+                and how Azure services and some well-known architectural patterns could help us to achieve them.
+                I have documented my reflections in <span class="text-primary font-weight-bold">nucoris</span>
+                <a href="https://nucoris.blob.core.windows.net/docs/nucoris%20Architecture.pdf" target="_blank">architecture document</a>.
+                <br />For a visual overview of the architecture you can have a look at its
+                <a href="https://nucoris.blob.core.windows.net/docs/nucoris%20Architecture%20Diagram.pdf" target="_blank">diagram</a>.
+            </p>
+            <p>
+                One of the main patterns in <span class="text-primary font-weight-bold">nucoris</span> is <abbr title="Command Query Responsibility Segregation">CQRS</abbr>,
+                which I use as described in my 
+                <a href="https://nucoris.blob.core.windows.net/docs/nucoris%20CQRS%20Implementation.pdf" target="_blank">CQRS implementation document</a>.
+            </p>
+            <p>
+                If you are considering using a NoSQL document database in your project
+                you may be interested to read about my experience in
+                <span class="text-primary font-weight-bold">nucoris</span> 
+                <a href="https://nucoris.blob.core.windows.net/docs/nucoris%20Persistence.pdf" target="_blank">persistence document</a>.
+            </p>
+        </div>
+    </section>
+
+    <section title="Functionality" class="nucoris-border-left">
+        <div>
+            <h2 class="nucoris-color">Functionality</h2>
+            <p>
+                <span class="text-primary font-weight-bold">nucoris</span> is a prototype focused on exploring Azure backend technologies.
+                It is not a final application and its user interface is very simple.
+            </p>
+            <p>
+                You can see the list of patients currently admitted into the system (<a asp-page="/Admitted">Admitted</a> page) and
+                from there jump into the details of a limited patient's health record. In the <em>Patient Details</em> page you can add/remove allergies
+                and add, assign and stop medication orders. You can also inspect an audit trail of all events affecting the patient.
+            </p>
+            <p>
+                If you wish so, you can admit a new patient from the <a asp-page="/NewAdmission">New Admission</a> page.
+                If you prescribe a new medication order and assign it to you ("USER, Guest"),
+                it will be listed in the <a asp-page="MyOrders">My Orders</a> page a few seconds later
+                (it is maintained by an asynchronous process that relies on <em>Cosmos Change Feed</em> and <em>Azure Service Bus</em>).
+            </p>
+        </div>
+    </section>
+
+</div>

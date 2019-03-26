@@ -1,0 +1,119 @@
+﻿/* Font families */
+body {
+    font-family: 'Noto Sans', sans-serif;
+    padding-top: 60px;
+}
+
+a.nav-link {
+    font-family: 'Raleway', 'Noto Sans', sans-serif;
+    font-size: 1.15rem;
+    margin-right: 1rem;
+}
+
+h1,h2 {
+    font-family: 'Raleway', 'Noto Sans', sans-serif;
+}
+
+
+/* Nucoris colors */
+.nucoris-color {
+    color: #198CFA
+}
+
+.nucoris-background {
+    background: #198CFA
+}
+
+.nav-item > a:hover,
+.nav-item > a:focus {
+    background: #198CFA;
+    color: white !important;
+}
+
+.nucoris-border-left {
+    border-color: #198CFA;
+    border-style: solid;
+    border-width: 0 0 0 0.2rem;
+    padding-left: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Logo smaller in small devices, 
+    with subsequent adjustments in body padding since header is fixed: */
+.nucoris-logo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 150px;
+    height: 100%;
+}
+
+@media (min-width:576px) {
+    body {
+        padding-top: 115px;
+    }
+
+    .nucoris-logo {
+        margin-left: 12px;
+        width: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 145px;
+    }
+    .nucoris-logo {
+        width: 350px;
+    }
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .50rem .75rem -0.25rem rgba(25, 140, 250, .3);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}

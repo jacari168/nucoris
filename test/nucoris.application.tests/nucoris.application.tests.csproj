@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+    <PackageReference Include="Shouldly" Version="3.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\nucoris.application.interfaces\nucoris.application.interfaces.csproj" />
+    <ProjectReference Include="..\..\src\nucoris.application\nucoris.application.csproj" />
+    <ProjectReference Include="..\..\src\nucoris.domain\nucoris.domain.csproj" />
+    <ProjectReference Include="..\..\src\nucoris.ioc.container\nucoris.ioc.container.csproj" />
+    <ProjectReference Include="..\..\src\nucoris.persistence\nucoris.persistence.csproj" />
+    <ProjectReference Include="..\..\src\nucoris.queries\nucoris.queries.csproj" />
+  </ItemGroup>
+
+</Project>

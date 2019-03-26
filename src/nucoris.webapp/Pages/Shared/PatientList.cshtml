@@ -1,0 +1,34 @@
+﻿@model System.Collections.Generic.List<nucoris.webapp.Models.PatientVM>
+
+<div class="container">
+    @* Show header in all sizes except xs *@
+    <div class="row my-2 d-none d-sm-flex px-0">
+        <div class="col-sm-3 bg-primary text-white rounded-left">MRN</div>
+        <div class="col-sm-5 col-lg-6 col-xl-7 bg-primary text-white">Name</div>
+        <div class="col-sm-4 col-lg-3 col-xl-2 bg-primary text-white rounded-right text-truncate">Admission Time</div>
+    </div>
+    @foreach (var patient in Model)
+    {
+    @* Show all properties in a single row except in xs sizes.
+        In xs show properties one below the other,
+        and draw a line between patients *@
+    <div class="row">
+        <a class="col-sm-3 text-truncate" asp-page="PatientDetails" asp-route-patientId="@patient.Id"
+           data-toggle="tooltip" title="Click to open patient's record">@patient.Mrn</a>
+        <div class="col-sm-5 col-lg-6 col-xl-7 text-truncate">@patient.DisplayName</div>
+        <div class="col-sm-4 col-lg-3 col-xl-2 text-truncate">
+            @if (patient.ActiveAdmission != null)
+                {
+            <em class="d-sm-none">Admission time: </em>@patient.ActiveAdmission.Started.Value.ToLocalTime().ToString("yyyy-MM-dd HH:mm")
+                }
+                else
+                {
+            <em>Discharged</em>
+                }
+        </div>
+    </div>
+    <div class="nucoris-background mb-3 d-sm-none" style="height: 1px">&nbsp;</div>
+    }
+
+</div>
+

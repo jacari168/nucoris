@@ -1,0 +1,22 @@
+﻿@model nucoris.webapp.Models.OrderVM
+@* Show all properties in a single row except in xs sizes.
+    In xs show properties one below the other, and draw a line between orders *@
+<div class="row @(Model.IsActive? "" : "text-secondary")">
+    <div class="col-sm-6 text-truncate @(Model.IsActive? "font-weight-bold" : "")">@Model.Description</div>
+    <div class="col-sm-2">@(Model.IsActive ? "Active" : "Inactive")</div>
+    <div class="col-sm-2 text-truncate">@Model.AssignedUserDisplayName</div>
+    <div class="col-sm-2 text-sm-right">
+        @if (Model.IsActive)
+        {
+            <a class="btn fas fa-user-circle text-primary p-0 pb-1 nucoris-assign-order"
+               title="Assign User"
+               data-orderdesc="@Model.Description" data-orderid="@Model.Id"
+               data-toggle="modal" data-target="#userSelectionModal"></a>
+            <a class="btn far fa-stop-circle text-danger p-0 pb-1 nucoris-stop-order"
+               title="Stop Order"               
+               data-orderdesc="@Model.Description" data-orderid="@Model.Id"></a>}
+    </div>
+</div>
+<div class="nucoris-background mb-3 d-sm-none" style="height: 1px">&nbsp;</div>
+
+

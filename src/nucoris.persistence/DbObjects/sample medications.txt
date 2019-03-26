@@ -1,0 +1,75 @@
+{
+    "id": "7d6460fe-5e99-4c54-8851-581a6e11ec6c",
+    "partitionKey": "R_MedicationForm",
+    "docType": "Reference",
+    "docSubType": "nucoris.application.interfaces.ReferenceData.MedicationForm",
+    "docContents": {
+        "Medication": {
+			"Name": "Paracetamol"
+		},
+        "Dose": {
+			"Amount": 80.0,
+			"Unit": {
+				"Name": "mg"
+			}
+		},
+        "Id": "7d6460fe-5e99-4c54-8851-581a6e11ec6c"
+    }
+}
+,
+{
+    "id": "7a6f2c62-78b5-459d-9863-3d4a3270d674",
+    "partitionKey": "R_MedicationForm",
+    "docType": "Reference",
+    "docSubType": "nucoris.application.interfaces.ReferenceData.MedicationForm",
+    "docContents": {
+        "Medication": {
+			"Name": "Ketamine"
+		},
+        "Dose": {
+			"Amount": 10.0,
+			"Unit": {
+				"Name": "mg/mL"
+			}
+		},
+        "Id": "7a6f2c62-78b5-459d-9863-3d4a3270d674"
+    }
+}
+,
+{
+    "id": "fee4a6fe-4632-45be-9d70-bdb77eeb3061",
+    "partitionKey": "R_MedicationForm",
+    "docType": "Reference",
+    "docSubType": "nucoris.application.interfaces.ReferenceData.MedicationForm",
+    "docContents": {
+        "Medication": {
+			"Name": "Amoxicillin"
+		},
+        "Dose": {
+			"Amount": 250.0,
+			"Unit": {
+				"Name": "mg"
+			}
+		},
+        "Id": "fee4a6fe-4632-45be-9d70-bdb77eeb3061"
+    }
+}
+,
+{
+    "id": "48e3b7ef-37ae-424f-aacc-c63ca39c0452",
+    "partitionKey": "R_MedicationForm",
+    "docType": "Reference",
+    "docSubType": "nucoris.application.interfaces.ReferenceData.MedicationForm",
+    "docContents": {
+        "Medication": {
+			"Name": "Heparin"
+		},
+        "Dose": {
+			"Amount": 2500.0,
+			"Unit": {
+				"Name": "units/mL"
+			}
+		},
+        "Id": "48e3b7ef-37ae-424f-aacc-c63ca39c0452"
+    }
+}

@@ -1,0 +1,37 @@
+﻿@page
+@model nucoris.webapp.Pages.PatientAuditTrailModel
+@{
+    ViewData["Title"] = "Patient Audit Trail";
+}
+
+<h1 class="container nucoris-color">Patient Audit Trail</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.PatientAuditTrail.DisplayName</h4>
+        <h5 class="card-subtitle">@Model.PatientAuditTrail.Mrn</h5>
+    </div>
+</div>
+
+<div class="container mt-3">
+    @* Show header in all sizes except xs and sm *@
+    <div class="row my-2 d-none d-md-flex px-0">
+        <div class="col-md-3 col-lg-3 nucoris-background text-white rounded-left">User</div>
+        <div class="col-md-4 col-lg-3 nucoris-background text-white">Time</div>
+        <div class="col-md-5 col-lg-6 nucoris-background text-white rounded-right">Action</div>
+    </div>
+    @foreach (var item in Model.PatientAuditTrail.Items)
+    {
+        @* Show all properties in a single row except in xs and sm sizes.
+            In xs/sm show properties one below the other,
+            and draw a line between patients *@
+    <div class="row">
+        <div class="col-md-3 col-lg-3 text-truncate">@item.DoneBy</div>
+        <div class="col-md-4 col-lg-3 text-truncate">@item.DoneAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss")</div>
+        <div class="col-md-5 col-lg-6 text-truncate">@item.Description</div>
+    </div>
+        <div class="nucoris-background mb-3 d-md-none" style="height: 1px">&nbsp;</div>
+    }
+
+</div>
+

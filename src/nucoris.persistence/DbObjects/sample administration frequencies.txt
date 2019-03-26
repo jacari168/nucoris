@@ -1,0 +1,51 @@
+{
+    "id": "888fed20-7b54-44bd-902d-b1381517779d",
+    "partitionKey": "R_AdministrationFrequency",
+    "docType": "Reference",
+    "docSubType": "nucoris.application.interfaces.ReferenceData.AdministrationFrequency",
+    "docContents": {
+        "Frequency": {
+			"Name": "Q8H"
+		},
+        "Id": "888fed20-7b54-44bd-902d-b1381517779d"
+    }
+}
+,
+{
+    "id": "ca8f9231-ee26-465b-8fbd-23675a62594a",
+    "partitionKey": "R_AdministrationFrequency",
+    "docType": "Reference",
+    "docSubType": "nucoris.application.interfaces.ReferenceData.AdministrationFrequency",
+    "docContents": {
+        "Frequency": {
+			"Name": "Q12H"
+		},
+        "Id": "ca8f9231-ee26-465b-8fbd-23675a62594a"
+    }
+}
+,
+{
+    "id": "b1b633e3-4b40-4de0-b808-bc61abdc1edc",
+    "partitionKey": "R_AdministrationFrequency",
+    "docType": "Reference",
+    "docSubType": "nucoris.application.interfaces.ReferenceData.AdministrationFrequency",
+    "docContents": {
+        "Frequency": {
+			"Name": "Q24H"
+		},
+        "Id": "b1b633e3-4b40-4de0-b808-bc61abdc1edc"
+    }
+}
+,
+{
+    "id": "84c8d76a-34a2-47c4-b28b-f2614c4a8c5d",
+    "partitionKey": "R_AdministrationFrequency",
+    "docType": "Reference",
+    "docSubType": "nucoris.application.interfaces.ReferenceData.AdministrationFrequency",
+    "docContents": {
+        "Frequency": {
+			"Name": "QAM"
+		},
+        "Id": "84c8d76a-34a2-47c4-b28b-f2614c4a8c5d"
+    }
+}

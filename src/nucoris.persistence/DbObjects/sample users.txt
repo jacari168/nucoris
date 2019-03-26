@@ -1,0 +1,51 @@
+{
+    "id": "dbdc1c2a-ac34-46f0-a25a-17bdd81db3ae",
+    "partitionKey": "R_User",
+    "docType": "Reference",
+    "docSubType": "nucoris.domain.User",
+    "docContents": {
+        "Username": "jakardev@outlook.com",
+        "GivenName": "Jakar",
+        "FamilyName": "Dev",
+        "Id": "dbdc1c2a-ac34-46f0-a25a-17bdd81db3ae"
+    }
+}
+,
+{
+    "id": "10de4ff7-9044-4007-8aeb-883550a5c44b",
+    "partitionKey": "R_User",
+    "docType": "Reference",
+    "docSubType": "nucoris.domain.User",
+    "docContents": {
+        "Username": "pm@nucoris.com",
+        "GivenName": "Peer",
+        "FamilyName": "Metafile",
+        "Id": "10de4ff7-9044-4007-8aeb-883550a5c44b"
+    }
+}
+,
+{
+    "id": "a247196b-4f1d-4e2a-9fa7-f80432706e7f",
+    "partitionKey": "R_User",
+    "docType": "Reference",
+    "docSubType": "nucoris.domain.User",
+    "docContents": {
+        "Username": "test@nucoris.com",
+        "GivenName": "Test",
+        "FamilyName": "User",
+        "Id": "a247196b-4f1d-4e2a-9fa7-f80432706e7f"
+    }
+}
+,
+{
+    "id": "5481466a-f345-42b3-94b6-35d913c715d8",
+    "partitionKey": "R_User",
+    "docType": "Reference",
+    "docSubType": "nucoris.domain.User",
+    "docContents": {
+        "Username": "guest@nucoris.com",
+        "GivenName": "Guest",
+        "FamilyName": "User",
+        "Id": "5481466a-f345-42b3-94b6-35d913c715d8"
+    }
+}

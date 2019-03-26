@@ -1,0 +1,92 @@
+{
+  "indexingMode": "consistent",
+  "automatic": true,
+  "includedPaths": [
+    {
+      "path": "/partitionKey/?",
+      "indexes": [
+        {
+          "kind": "Range",
+          "dataType": "String",
+          "precision": -1
+        }
+      ]
+    },
+    {
+      "path": "/docType/?",
+      "indexes": [
+        {
+          "kind": "Range",
+          "dataType": "String",
+          "precision": -1
+        }
+      ]
+    },
+    {
+      "path": "/docSubType/?",
+      "indexes": [
+        {
+          "kind": "Range",
+          "dataType": "String",
+          "precision": -1
+        }
+      ]
+    },
+    {
+      "path": "/docContents/AdmissionId/?",
+      "indexes": [
+        {
+          "kind": "Range",
+          "dataType": "String",
+          "precision": -1
+        }
+      ]
+    },
+    {
+      "path": "/docContents/Username/?",
+      "indexes": [
+        {
+          "kind": "Range",
+          "dataType": "String",
+          "precision": -1
+        }
+      ]
+    },
+    {
+      "path": "/docContents/QueryPatient/*",
+      "indexes": [
+        {
+          "kind": "Range",
+          "dataType": "Number",
+          "precision": -1
+        },
+        {
+          "kind": "Range",
+          "dataType": "String",
+          "precision": -1
+        }
+      ]
+    },
+    {
+      "path": "/docContents/QueryOrder/*",
+      "indexes": [
+        {
+          "kind": "Range",
+          "dataType": "Number",
+          "precision": -1
+        },
+        {
+          "kind": "Range",
+          "dataType": "String",
+          "precision": -1
+        }
+      ]
+    }
+
+  ],
+  "excludedPaths": [
+    {
+      "path": "/"
+    }
+  ]
+}

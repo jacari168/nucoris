@@ -1,0 +1,9 @@
+﻿@page
+@model nucoris.webapp.Pages.AdmittedModel
+@{
+    ViewData["Title"] = "Admitted Patients";
+}
+
+<h1 class="container nucoris-color mb-4">Admitted Patients</h1>
+
+<partial name="PatientList" model="@Model.AdmittedPatients"/>

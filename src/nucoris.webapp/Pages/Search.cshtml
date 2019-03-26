@@ -1,0 +1,43 @@
+﻿@page
+@model nucoris.webapp.Pages.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1 class="container nucoris-color">Search</h1>
+
+<section id="searchSection" class="container mt-4">
+    <p class="alert alert-info">Please enter search criteria:</p>
+    <form method="post">
+        <div class="control-group form-group">
+            <div class="controls">
+                <label for="mrn">MRN:</label>
+                <input name="mrn" type="text" class="form-control">
+            </div>
+            <div class="controls mt-4">
+                <label for="givenName">Given Name:</label>
+                <input name="givenName" type="text" class="form-control">
+            </div>
+            <div class="controls mt-4">
+                <label for="familyName">Family Name:</label>
+                <input name="familyName" type="text" class="form-control">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Search</button>
+    </form>
+</section>
+
+
+<div class="container nucoris-background mt-5 mb-1 d-sm-block" style="height: 2px">&nbsp;</div>
+
+@if (Model.FoundPatients != null && Model.FoundPatients.Any())
+{
+    <partial name="PatientList" model="@Model.FoundPatients" />
+}
+else if (Model.FoundPatients != null)
+{
+    <p class="alert alert-warning">No patient found with those criteria</p>
+}
+
+
+
