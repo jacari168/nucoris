@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "message",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "application",
+      "subscriptionName": "applicationEventLoopback",
+      "connection": "nucorisSB_RootManageSharedAccessKey_SERVICEBUS"
+    }
+  ]
+}

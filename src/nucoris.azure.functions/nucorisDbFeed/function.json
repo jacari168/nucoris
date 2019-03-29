@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "input",
+      "direction": "in",
+      "connectionStringSetting": "nucoris_DOCUMENTDB",
+      "databaseName": "nucorisDb",
+      "collectionName": "nucorisCol",
+      "leaseCollectionName": "leases",
+      "createLeaseCollectionIfNotExists": true
+    },
+    {
+      "type": "serviceBus",
+      "connection": "nucorisSB_RootManageSharedAccessKey_SERVICEBUS",
+      "name": "messages",
+      "topicName": "application",
+      "direction": "out"
+    }
+  ]
+}
